@@ -7,6 +7,8 @@ from urllib.request import urlretrieve
 from model import Net
 
 # Loads latest model state from Github
+urlretrieve("https://github.com/equ1/mnist-interface/tree/main/saved_models")
+
 model_timestamps = [filename[10:-3]
                     for filename in os.listdir("./saved_models")]
 latest_timestamp = max(model_timestamps)
