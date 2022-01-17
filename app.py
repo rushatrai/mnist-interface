@@ -3,11 +3,10 @@ import torch
 import torchvision.transforms as transforms
 import torch.nn.functional as F
 import gradio as gr
-from urllib.request import urlretrieve
 
-# Loads latest model state from Github
-urlretrieve("https://github.com/equ1/mnist-interface/tree/main/demo_model.pt", "demo_model.pt")
+from model import Net
 
+# loads demo model
 if torch.cuda.is_available():
   dev = "cuda:0"
 else:
@@ -15,7 +14,8 @@ else:
 
 device = torch.device(dev)
 
-model = torch.load(f"./saved_models/demo_model.pt", map_location=device)
+model = torch.load(f"./demo_model.pt", map_location=device)
+
 model.eval()
 
 # inference function
