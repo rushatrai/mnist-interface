@@ -20,8 +20,7 @@ else:
 
 device = torch.device(dev)
 
-model = Net()
-model.load_state_dict(torch.load(f"./saved_models/mnist-cnn-{latest_timestamp}.pt", map_location=device))
+model = torch.load(f"./saved_models/mnist-cnn-{latest_timestamp}.pt", map_location=device)
 model.eval()
 
 # inference function
