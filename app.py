@@ -5,13 +5,8 @@ import torch.nn.functional as F
 import gradio as gr
 from urllib.request import urlretrieve
 
-
 # Loads latest model state from Github
-urlretrieve("https://github.com/equ1/mnist-interface/tree/main/saved_models")
-
-model_timestamps = [filename[10:-3]
-                    for filename in os.listdir("./saved_models")]
-latest_timestamp = max(model_timestamps)
+urlretrieve("https://github.com/equ1/mnist-interface/tree/main/demo_model.pt", "demo_model.pt")
 
 if torch.cuda.is_available():
   dev = "cuda:0"
