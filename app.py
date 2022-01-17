@@ -4,7 +4,7 @@ import torchvision.transforms as transforms
 import torch.nn.functional as F
 import gradio as gr
 from urllib.request import urlretrieve
-from model import Net
+
 
 # Loads latest model state from Github
 urlretrieve("https://github.com/equ1/mnist-interface/tree/main/saved_models")
@@ -36,5 +36,5 @@ def inference(img):
 # Creates and launches gradio interface
 labels = range(10)  # 1-9 labels
 outputs = gr.outputs.Label(num_top_classes=5)
-gr.Interface(fn=inference, inputs='sketchpad', outputs=outputs, title="MNIST interface",
+gr.Interface(fn=inference, inputs='sketchpad', outputs=outputs, title="MNIST Interface",
              description="Draw a number from 0-9 in the box and click submit to see the model's predictions.").launch()
