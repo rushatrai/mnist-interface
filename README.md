@@ -6,6 +6,8 @@ Colab Notebook walkthrough available at: https://colab.research.google.com/drive
 
 Live version available at: https://huggingface.co/spaces/equ1/mnist_interface
 
+Please click "Restart Space" if it has timed out due to inactivity.
+
 # Implementation details
 The `model.py` file contains a PyTorch implementation of a modified LeNet-5 architecture built to perform well on MNIST.
 
